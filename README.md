@@ -1,5 +1,5 @@
 # Melody - учебный проект
-## Технолоubb
+## Технологии
 - HTML
 - CSS
 - JavaScript
