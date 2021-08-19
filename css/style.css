@@ -65,6 +65,13 @@ body {
   padding-top: 54px;
   display: flex;
 }
+.home-image path {
+  opacity: 0;
+  cursor: pointer;
+}
+.home-image path:hover {
+  opacity: 1;
+}
 .main-info {
   display: flex;
   flex-direction: column;
@@ -83,11 +90,7 @@ body {
   color: #635854;
   margin: 0;
 }
-.home-image path {
-  opacity: 0;
-  cursor: pointer;
-}
-.home-image path:hover {
+path.current-floor {
   opacity: 1;
 }
 .counter-group {
