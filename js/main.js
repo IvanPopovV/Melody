@@ -3,13 +3,20 @@ $(document).ready(function () {
   var counterUp = $(".counter-up");
   var counterDown = $(".counter-down");
   var floorPath = $(".home-image path");
+  var modal = $(".modal");
+  var modalCloseButton = $(".modal-close-buttom");
+  var viewFlatsButton = $(".view-flats");
 
   floorPath.on("mouseover", function() {
     floorPath.removeClass("current-floor");
     currentFloor = $(this).attr("data-floor");
-    $(`[data-floor=${currentFloor}]`).toggleClass("current-floor"); 
+    //$(`[data-floor=${currentFloor}]`).toggleClass("current-floor"); 
     $('.counter').text(currentFloor);  
-  })  
+  });
+  
+  floorPath.on("click", toggleModal);
+  modalCloseButton.on("click", toggleModal);
+  viewFlatsButton.on("click", toggleModal);
   
   // отслеживаем клик по кнопке вверх
   counterUp.on("click", function() {
@@ -32,4 +39,8 @@ $(document).ready(function () {
       $(`[data-floor=${usCurrentFloor}]`).toggleClass("current-floor"); 
     }    
   });
+
+  function toggleModal() { // функция открытия и закрытия модального окна
+    modal.toggleClass("is-open");
+  }
 });
